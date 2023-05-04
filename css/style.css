@@ -1,0 +1,46 @@
+:root {
+    --bg-color: #131313;
+    --primary-txt-color: #1A8A09;
+    --white-txt-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #131313;
+    color: var(--white-txt-color);
+}
+
+main {
+    margin-top: 2.5em;
+}
+
+.container {
+    width: 90%;
+    max-width: 80em;
+    margin-inline: auto;
+}
+
+img {
+    width: 10em;
+}
+
+.img-container {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.banner {
+    color: var(--primary-txt-color);
+}
+
+.p-container {
+    margin-bottom: 1.5em;
+}
