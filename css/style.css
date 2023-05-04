@@ -18,6 +18,11 @@ body {
     color: var(--white-txt-color);
 }
 
+input:focus
+{
+	outline:0;
+}
+
 main {
     margin-top: 2.5em;
 }
@@ -43,4 +48,35 @@ img {
 
 .p-container {
     margin-bottom: 1.5em;
+}
+
+.flex {
+    display: flex;
+}
+
+.cursor::after {
+  content: "";
+  width: 8px;
+  height: 20px;
+  background: #fff;
+  color: #fff;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+input[type=text] {
+    margin:0;
+	border:0;
+	padding:0;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+    display: inline;
 }
