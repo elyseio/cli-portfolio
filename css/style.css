@@ -15,23 +15,23 @@
 body {
     line-height: 1.5;
     font-family: 'VT323', monospace;
+    font-size: 20px;
     background-color: #131313;
     color: var(--white-txt-color);
 }
 
-input:focus
-{
-	outline:0;
-}
-
-main {
-    margin-top: 2.5em;
+.hide {
+    display: none;
 }
 
 .container {
     width: 90%;
     max-width: 80em;
     margin-inline: auto;
+}
+
+main {
+    margin-top: 2.5em;
 }
 
 img {
@@ -67,4 +67,3 @@ input[type=text] {
 input[type=text]:focus {
     outline: none;
 }
-
