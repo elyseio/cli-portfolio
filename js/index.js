@@ -87,24 +87,6 @@ function userInput(input, div) {
     });
 }
 
-function createCLI() {
-    const div = document.createElement("div");
-    const span = document.createElement("span");
-    const newInput = document.createElement("input");
-
-    div.setAttribute("id", "div");
-    newInput.setAttribute("type", "text");
-    newInput.setAttribute("id", "input");
-    span.classList.add("whois");
-    span.innerHTML = "[intruder@term ~] $ ";
-    div.appendChild(span);
-    div.appendChild(newInput);
-    root.appendChild(div);
-    document.getElementById("input").focus();
-    document.getElementById("input").scrollIntoView();
-    userInput(newInput, div);
-}
-
 function createBanner() {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -129,6 +111,24 @@ function createBanner() {
                 </div>
     `;
     root.appendChild(div);
+}
+
+function createCLI() {
+    const div = document.createElement("div");
+    const span = document.createElement("span");
+    const newInput = document.createElement("input");
+
+    div.setAttribute("id", "div");
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("id", "input");
+    span.classList.add("whois");
+    span.innerHTML = "[intruder@term ~] $ ";
+    div.appendChild(span);
+    div.appendChild(newInput);
+    root.appendChild(div);
+    document.getElementById("input").focus();
+    document.getElementById("input").scrollIntoView();
+    userInput(newInput, div);
 }
 
 function main() {
