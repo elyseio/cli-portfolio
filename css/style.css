@@ -59,8 +59,7 @@ img {
 input[type=text] {
 	border:0;
 	background:none;
-    color: transparent;
-    text-shadow: 0 0 0 var(--white-txt-color);
+    color: var(--white-txt-color);
     font-family: inherit;
     font-size: 16px;
 }
@@ -68,18 +67,4 @@ input[type=text] {
 input[type=text]:focus {
     outline: none;
 }
-input[type=text]::after {
-  content: "";
-  width: 8px;
-  height: 20px;
-  background: #fff;
-  color: #fff;
-  display: inline-block;
-  animation: cursor-blink 1.5s steps(2) infinite;
-}
 
-@keyframes cursor-blink {
-  0% {
-    opacity: 0;
-  }
-}
