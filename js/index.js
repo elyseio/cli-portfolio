@@ -1,4 +1,4 @@
-const main = document.getElementById("main");
+const root = document.getElementById("root");
 const banner = document.getElementById("banner");
 
 const help = [
@@ -10,11 +10,56 @@ const help = [
     "help           - show list of valid commands"
 ];
 
+
+function showWhoami() {
+    const p = document.createElement("p");
+    p.innerHTML = "Hey, I go by the name of elyseio!";
+    root.appendChild(p);
+    createCLI();
+}
+
+function showWhoareyou() {
+    const p = document.createElement("p");
+    p.innerHTML = "Do you intimately know yourself?";
+    root.appendChild(p);
+    createCLI();
+}
+
+function clear() {
+    banner.classList.add("hide");
+    while(root.firstChild) {
+        root.removeChild(root.firstChild);
+    }
+    createCLI();
+}
+
+function showHelp() {
+    const div = document.createElement("div");
+    help.map((el) => {
+        const p = document.createElement("p");
+        p.innerHTML = el
+        div.appendChild(p);
+    });
+    root.appendChild(div);
+    createCLI();
+}
+
+function error() {
+    const notFound = document.createElement("p");
+    notFound.innerHTML = "Command not found. Type 'help' for the list of commands.";
+    root.appendChild(notFound);
+    createCLI();
+}
+
 function userInput(input, div) {
     input.addEventListener("keypress", (event) => {
         if(event.key === "Enter" || event.keyCode === 13) {
-            const span = document.createElement("span");
             const userInput = event.target.value;
+            if(userInput === "clear") {
+                clear();
+                return;
+            }
+            const span = document.createElement("span");
             span.innerHTML = userInput;
             div.appendChild(span);
             input.remove();
@@ -24,9 +69,6 @@ function userInput(input, div) {
                     break;
                 case "whoareyou":
                     showWhoareyou();
-                    break;
-                case "clear": 
-                    hideBanner();
                     break;
                 case "help":
                     showHelp();
@@ -43,6 +85,8 @@ function createCLI() {
     const div = document.createElement("div");
     const span = document.createElement("span");
     const newInput = document.createElement("input");
+
+    div.setAttribute("id", "div");
     newInput.setAttribute("type", "text");
     newInput.setAttribute("id", "input");
     newInput.autofocus = true;
@@ -50,45 +94,8 @@ function createCLI() {
     span.innerHTML = "[intruder@term ~] $ ";
     div.appendChild(span);
     div.appendChild(newInput);
-    newInput.focus();
-    main.appendChild(div);
+    root.appendChild(div);
     userInput(newInput, div);
-}
-
-function showWhoami() {
-    const p = document.createElement("p");
-    p.innerHTML = "Hey, I go by the name of elyseio!";
-    main.appendChild(p);
-    createCLI();
-}
-
-function showWhoareyou() {
-    const p = document.createElement("p");
-    p.innerHTML = "Do you intimately know yourself?";
-    main.appendChild(p);
-    createCLI();
-}
-
-function hideBanner() {
-    banner.classList.add("hide");
-}
-
-function showHelp() {
-    const div = document.createElement("div");
-    help.map((el) => {
-        const p = document.createElement("p");
-        p.innerHTML = el
-        div.appendChild(p);
-    });
-    main.appendChild(div);
-    createCLI();
-}
-
-function error() {
-    const notFound = document.createElement("p");
-    notFound.innerHTML = "Command not found. Type 'help' for the list of commands.";
-    main.appendChild(notFound);
-    createCLI();
 }
 
 function start() {
