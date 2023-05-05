@@ -55,13 +55,12 @@ img {
     display: flex;
 }
 
-
 input[type=text] {
 	border:0;
 	background:none;
     color: var(--white-txt-color);
     font-family: inherit;
-    font-size: 16px;
+    font-size: inherit;
 }
 
 input[type=text]:focus {
