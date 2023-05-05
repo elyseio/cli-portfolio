@@ -1,15 +1,14 @@
 const root = document.getElementById("root");
-const banner = document.getElementById("banner");
 
 const help = [
     "'whoami'         - who made this",
     "'whoareyou'      - yes, who are you?",
     "'projects'       - view projects",
     "'clear'          - clear the terminal screen",
+    "'banner'         - show banner",
     "'secret'         - I wonder what it does?",
     "'help'           - show list of valid commands"
 ];
-
 
 function showWhoami() {
     const p = document.createElement("p");
@@ -26,10 +25,14 @@ function showWhoareyou() {
 }
 
 function clear() {
-    banner.classList.add("hide");
     while(root.firstChild) {
         root.removeChild(root.firstChild);
     }
+    createCLI();
+}
+
+function showBanner() {
+    createBanner();
     createCLI();
 }
 
@@ -70,6 +73,9 @@ function userInput(input, div) {
                 case "whoareyou":
                     showWhoareyou();
                     break;
+                case "banner":
+                    showBanner();
+                    break;
                 case "help":
                     showHelp();
                     break;
@@ -99,7 +105,34 @@ function createCLI() {
     userInput(newInput, div);
 }
 
+function createBanner() {
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <div id="banner" class="banner">
+                    <div class="img-container">
+                        <img src="./img/evil-morty.png" alt="Evil Morty">
+                    </div>
+                    <div class="p-container">
+                        <p>
+                        Wel<span id="glitch">come</span>...welcome! 
+                        You've found the portfolio o..of <span id="glitch">elyseio</span>... 
+                        Anyway, this is an interactive web terminal.
+                        </p>
+                    </div>
+
+                    <div class="p-container">
+                        <p>
+                        Type <span class="help">'help'</span> to see list of
+                        available commands.
+                        </p>
+                    </div>
+                </div>
+    `;
+    root.appendChild(div);
+}
+
 function main() {
+    createBanner();
     createCLI();
 }
 
