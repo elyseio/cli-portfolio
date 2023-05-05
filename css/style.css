@@ -14,6 +14,7 @@
 
 body {
     line-height: 1.5;
+    font-family: 'VT323', monospace;
     background-color: #131313;
     color: var(--white-txt-color);
 }
@@ -54,7 +55,20 @@ img {
     display: flex;
 }
 
-.cursor::after {
+
+input[type=text] {
+	border:0;
+	background:none;
+    color: transparent;
+    text-shadow: 0 0 0 var(--white-txt-color);
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+input[type=text]::after {
   content: "";
   width: 8px;
   height: 20px;
@@ -68,15 +82,4 @@ img {
   0% {
     opacity: 0;
   }
-}
-
-input[type=text] {
-    margin:0;
-	border:0;
-	padding:0;
-	vertical-align:middle;
-	white-space:normal;
-	background:none;
-	line-height:1;
-    display: inline;
 }
