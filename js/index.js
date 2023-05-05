@@ -2,12 +2,12 @@ const root = document.getElementById("root");
 const banner = document.getElementById("banner");
 
 const help = [
-    "whoami         - who made this",
-    "whoareyou      - yes, who are you?",
-    "projects       - view projects",
-    "clear          - clear the terminal screen",
-    "secret         - I wonder what it does?",
-    "help           - show list of valid commands"
+    "'whoami'         - who made this",
+    "'whoareyou'      - yes, who are you?",
+    "'projects'       - view projects",
+    "'clear'          - clear the terminal screen",
+    "'secret'         - I wonder what it does?",
+    "'help'           - show list of valid commands"
 ];
 
 
@@ -89,17 +89,18 @@ function createCLI() {
     div.setAttribute("id", "div");
     newInput.setAttribute("type", "text");
     newInput.setAttribute("id", "input");
-    newInput.autofocus = true;
     span.classList.add("whois");
     span.innerHTML = "[intruder@term ~] $ ";
     div.appendChild(span);
     div.appendChild(newInput);
     root.appendChild(div);
+    document.getElementById("input").focus();
+    document.getElementById("input").scrollIntoView();
     userInput(newInput, div);
 }
 
-function start() {
+function main() {
     createCLI();
 }
 
-start();
+main();
