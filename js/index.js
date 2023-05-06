@@ -10,6 +10,11 @@ const help = [
     "'help'           - show list of valid commands"
 ];
 
+const projects = [
+    "'BOXCHAMPY'    - landing page for a fighting gym",
+    "'test'         - test"
+];
+
 function showWhoami() {
     const p = document.createElement("p");
     p.innerHTML = "Hey, I go by the name of elyseio!";
@@ -21,6 +26,23 @@ function showWhoareyou() {
     const p = document.createElement("p");
     p.innerHTML = "Do you intimately know yourself?";
     root.appendChild(p);
+    createCLI();
+}
+
+function showProjects() {
+    const div = document.createElement("div");
+    projects.map((el, i) => {
+        const p = document.createElement("p");
+        const a = document.createElement("a");
+        const txt = document.createTextNode(el);
+        a.appendChild(txt);
+        if(i === 0) a.href = "https://boxchampy.netlify.app/";
+        if(i === 1) a.href= "https://google.com";
+        a.target = "_blank";
+        p.appendChild(a);
+        div.appendChild(p);
+    })
+    root.appendChild(div);
     createCLI();
 }
 
@@ -73,6 +95,9 @@ function userInput(input, div) {
                 case "whoareyou":
                     showWhoareyou();
                     break;
+                case "projects":
+                    showProjects();
+                    break;
                 case "banner":
                     showBanner();
                     break;
@@ -119,6 +144,7 @@ function createCLI() {
     const newInput = document.createElement("input");
 
     div.setAttribute("id", "div");
+    div.setAttribute("class", "cli");
     newInput.setAttribute("type", "text");
     newInput.setAttribute("id", "input");
     span.classList.add("whois");

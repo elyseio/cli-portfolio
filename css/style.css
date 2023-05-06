@@ -26,6 +26,10 @@ body {
     margin-inline: auto;
 }
 
+.flex {
+    display: flex;
+}
+
 main {
     margin-top: 2.5em;
 }
@@ -44,11 +48,11 @@ img {
 }
 
 .p-container {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
-.flex {
-    display: flex;
+.cli {
+    margin-top: .5em;
 }
 
 input[type=text] {
