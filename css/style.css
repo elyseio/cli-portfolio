@@ -70,13 +70,13 @@ input:focus {
 }
 
 
-@media(min-width: 768px) {
+@media only screen and (min-width: 768px) {
     .container {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
-@media(min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
     .container {
         padding-left: 3em;
         padding-right: 3em;
