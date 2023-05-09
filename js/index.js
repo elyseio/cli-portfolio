@@ -15,6 +15,28 @@ const projects = [
     "'test'         - test"
 ];
 
+function createBanner() {
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <div id="banner" class="banner">
+                    <div class="img-container">
+                        <img src="./img/evil-morty.png" alt="Evil Morty">
+                    </div>
+                    <div class="p-container">
+                        <p>
+                            Wel<span class="glitch" data-text="come">come</span>...welcome! 
+                            You've found the portfolio o..of <span class="glitch" data-text="elyseio">elyseio</span>... 
+                            Anyway, this is an interactive web terminal.
+                            <br>
+                            Type <span class="help">'help'</span> to see list of
+                            available commands.
+                        </p>
+                    </div>
+                </div>
+    `;
+    root.appendChild(div);
+}
+
 function showWhoami() {
     const p = document.createElement("p");
     p.innerHTML = "Hey, I go by the name of elyseio!";
@@ -71,20 +93,23 @@ function showSecret() {
     document.getElementById("password").focus();
     input.addEventListener("keypress", (event) => {
         if(event.key === "Enter" || event.keyCode === 13) {
+            input.setAttribute("disabled", "true");
+            input.removeAttribute("id");
             if(event.target.value === "thepasswordisthis") {
                 console.log("correct!");
                 window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-                clear();
+                const p = document.createElement("p");
+                p.innerHTML = "Get rickrolled!";
+                div.appendChild(p);
             } else {
-                input.setAttribute("disabled", "true");
-                input.removeAttribute("id");
                 const p = document.createElement("p");
                 p.innerHTML = "Invalid password";
                 div.appendChild(p);
-                createCLI();
-                const newInput = document.getElementById("input");
-                newInput.focus();
             }
+            createCLI();
+            const newInput = document.getElementById("input");
+            newInput.focus();
+            newInput.scrollIntoView();
         }
     });
 }
@@ -146,27 +171,6 @@ function userInput(input, div) {
     });
 }
 
-function createBanner() {
-    const div = document.createElement("div");
-    div.innerHTML = `
-        <div id="banner" class="banner">
-                    <div class="img-container">
-                        <img src="./img/evil-morty.png" alt="Evil Morty">
-                    </div>
-                    <div class="p-container">
-                        <p>
-                            Wel<span class="glitch" data-text="come">come</span>...welcome! 
-                            You've found the portfolio o..of <span class="glitch" data-text="elyseio">elyseio</span>... 
-                            Anyway, this is an interactive web terminal.
-                            <br>
-                            Type <span class="help">'help'</span> to see list of
-                            available commands.
-                        </p>
-                    </div>
-                </div>
-    `;
-    root.appendChild(div);
-}
 
 function createCLI() {
     const div = document.createElement("div");
@@ -183,6 +187,7 @@ function createCLI() {
     div.appendChild(newInput);
     root.appendChild(div);
     document.getElementById("input").focus();
+    document.getElementById("input").scrollIntoView();
     userInput(newInput, div);
 }
 
