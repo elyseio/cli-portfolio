@@ -58,6 +58,37 @@ function showBanner() {
     createCLI();
 }
 
+function showSecret() {
+    const div = document.createElement("div");
+    const input = document.createElement("input");
+    input.setAttribute("type", "password");
+    input.setAttribute("id", "password");
+    const span = document.createElement("span");
+    span.innerHTML = "password: ";
+    div.appendChild(span);
+    div.appendChild(input);
+    root.appendChild(div);
+    document.getElementById("password").focus();
+    input.addEventListener("keypress", (event) => {
+        if(event.key === "Enter" || event.keyCode === 13) {
+            if(event.target.value === "thepasswordisthis") {
+                console.log("correct!");
+                window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+                clear();
+            } else {
+                input.setAttribute("disabled", "true");
+                input.removeAttribute("id");
+                const p = document.createElement("p");
+                p.innerHTML = "Invalid password";
+                div.appendChild(p);
+                createCLI();
+                const newInput = document.getElementById("input");
+                newInput.focus();
+            }
+        }
+    });
+}
+
 function showHelp() {
     const div = document.createElement("div");
     help.map((el) => {
@@ -101,6 +132,9 @@ function userInput(input, div) {
                 case "banner":
                     showBanner();
                     break;
+                case "secret":
+                    showSecret();
+                    break;
                 case "help":
                     showHelp();
                     break;
@@ -121,16 +155,12 @@ function createBanner() {
                     </div>
                     <div class="p-container">
                         <p>
-                        Wel<span id="glitch">come</span>...welcome! 
-                        You've found the portfolio o..of <span id="glitch">elyseio</span>... 
-                        Anyway, this is an interactive web terminal.
-                        </p>
-                    </div>
-
-                    <div class="p-container">
-                        <p>
-                        Type <span class="help">'help'</span> to see list of
-                        available commands.
+                            Wel<span class="glitch" data-text="come">come</span>...welcome! 
+                            You've found the portfolio o..of <span class="glitch" data-text="elyseio">elyseio</span>... 
+                            Anyway, this is an interactive web terminal.
+                            <br>
+                            Type <span class="help">'help'</span> to see list of
+                            available commands.
                         </p>
                     </div>
                 </div>
@@ -153,7 +183,6 @@ function createCLI() {
     div.appendChild(newInput);
     root.appendChild(div);
     document.getElementById("input").focus();
-    document.getElementById("input").scrollIntoView();
     userInput(newInput, div);
 }
 
