@@ -78,7 +78,7 @@ input:focus {
 
 @media(min-width: 1280px) {
     .container {
-        padding-left: 5em;
-        padding-right: 5em;
+        padding-left: 3em;
+        padding-right: 3em;
     }
 }
