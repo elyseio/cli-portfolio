@@ -66,7 +66,7 @@ function showWhoareyou() {
 
 function showProjects() {
     const div = document.createElement("div");
-    let i = 0;
+
     for(const el of projects) {
         const p = document.createElement("p");
         const a = document.createElement("a");
@@ -76,7 +76,6 @@ function showProjects() {
         a.target = "_blank";
         p.appendChild(a);
         div.appendChild(p);
-        i++;
     }
     root.appendChild(div);
     createCLI();
