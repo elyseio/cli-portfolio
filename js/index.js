@@ -3,6 +3,7 @@ const root = document.getElementById("root");
 const help = [
     "'whoami'         - who made this",
     "'whoareyou'      - yes, who are you?",
+    "'tech-stacks'    - show tech stacks",
     "'projects'       - view projects",
     "'clear'          - clear the terminal screen",
     "'banner'         - show banner",
@@ -46,13 +47,19 @@ function showWhoami() {
         a passionate individual with a deep love for creating interesting web 
         applications, and exploring the exciting realm of cybersecurity. 
         Recognizing the importance of protecting digital systems from malicious actors, Ely delved into the depths of 
-        ethical hacking and vulnerability testing. Their passion for cybersecurity is driven by the desire to ensure 
-        the safety and integrity of digital platforms.
+        ethical hacking and vulnerability testing. 
 
         With a diverse skill set encompassing web development, cybersecurity, and bug bounty hacking, 
         a unique combination of creative thinking, technical expertise, and a hacker's mindset sets him apart in the digital 
         landscape.
     `;
+    root.appendChild(p);
+    createCLI();
+}
+
+function showTechStacks() {
+    const p = document.createElement("p");
+    p.innerHTML = "Figma, HTML/CSS, SASS, JavaScript, React, Node.js, Express.js, PostgreSQL";
     root.appendChild(p);
     createCLI();
 }
@@ -164,6 +171,9 @@ function userInput(input, div) {
                     break;
                 case "whoareyou":
                     showWhoareyou();
+                    break;
+                case "tech-stacks":
+                    showTechStacks();
                     break;
                 case "projects":
                     showProjects();
