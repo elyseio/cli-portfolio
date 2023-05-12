@@ -10,9 +10,11 @@ const help = [
     "'help'           - show list of valid commands"
 ];
 
-const projects = [
-    "'BOXCHAMPY'    - landing page for a fighting gym",
-    "'test'         - test"
+const projects = [ 
+    {
+        name: "'BOXCHAMPY'    - landing page for a fighting gym, made with pure HTML/CSS",
+        url: "https://boxchampy.netlify.app"
+    },
 ];
 
 function createBanner() {
@@ -39,7 +41,18 @@ function createBanner() {
 
 function showWhoami() {
     const p = document.createElement("p");
-    p.innerHTML = "Hey, I go by the name of elyseio!";
+    p.innerHTML = `
+        Hey, the owner of this site go by name Klyde/Ely, 
+        a passionate individual with a deep love for creating interesting web 
+        applications, and exploring the exciting realm of cybersecurity. 
+        Recognizing the importance of protecting digital systems from malicious actors, Ely delved into the depths of 
+        ethical hacking and vulnerability testing. Their passion for cybersecurity is driven by the desire to ensure 
+        the safety and integrity of digital platforms.
+
+        With a diverse skill set encompassing web development, cybersecurity, and bug bounty hacking, 
+        a unique combination of creative thinking, technical expertise, and a hacker's mindset sets him apart in the digital 
+        landscape.
+    `;
     root.appendChild(p);
     createCLI();
 }
@@ -57,10 +70,9 @@ function showProjects() {
     for(const el of projects) {
         const p = document.createElement("p");
         const a = document.createElement("a");
-        const txt = document.createTextNode(el);
+        const txt = document.createTextNode(el.name);
         a.appendChild(txt);
-        if(i === 0) a.href = "https://boxchampy.netlify.app/";
-        if(i === 1) a.href= "https://google.com";
+        a.href = el.url;
         a.target = "_blank";
         p.appendChild(a);
         div.appendChild(p);
