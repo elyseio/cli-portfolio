@@ -66,6 +66,7 @@ function showWhoareyou() {
 
 function showProjects() {
     const div = document.createElement("div");
+    div.setAttribute("class", "projects");
 
     for(const el of projects) {
         const p = document.createElement("p");

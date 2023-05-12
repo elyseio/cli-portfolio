@@ -31,6 +31,7 @@ input {
   animation: textShadow 1.6s infinite;
 }
 
+
 .flex {
     display: flex;
 }
@@ -73,6 +74,10 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.projects p a {
+    color: red;
 }
 
 @keyframes textShadow {
