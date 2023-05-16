@@ -156,7 +156,7 @@ function error() {
 function userInput(input, div) {
     input.addEventListener("keypress", (event) => {
         if(event.key === "Enter" || event.keyCode === 13) {
-            const userInput = event.target.value;
+            const userInput = event.target.value.toLowerCase();
             if(userInput === "clear") {
                 clear();
                 return;
