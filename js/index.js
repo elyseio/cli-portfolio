@@ -3,7 +3,7 @@ const root = document.getElementById("root");
 const help = [
     "'whoami'         - who made this",
     "'whoareyou'      - yes, who are you?",
-    "'tech-stacks'    - show tech stacks",
+    "'tech-stacks'    - show tech stacks I've worked with",
     "'projects'       - view projects",
     "'clear'          - clear the terminal screen",
     "'banner'         - show banner",
