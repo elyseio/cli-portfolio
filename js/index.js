@@ -59,7 +59,7 @@ function showWhoami() {
 
 function showTechStacks() {
     const p = document.createElement("p");
-    p.innerHTML = "Figma, Adobe XD, HTML/CSS, SASS, JavaScript, Git, React, Node.js, Express.js, PostgreSQL";
+    p.innerHTML = "Figma, HTML/CSS, SASS, JavaScript, Git, React, Node.js, Express.js, PostgreSQL";
     root.appendChild(p);
     createCLI();
 }
