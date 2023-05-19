@@ -102,6 +102,7 @@ function showBanner() {
 }
 
 function showSecret() {
+    console.log("I wonder where the password is?");
     const div = document.createElement("div");
     const input = document.createElement("input");
     input.setAttribute("type", "password");
@@ -117,7 +118,7 @@ function showSecret() {
             input.setAttribute("disabled", "true");
             input.removeAttribute("id");
             if(event.target.value === "thepasswordisthis") {
-                console.log("correct!");
+                console.log("Gottem!");
                 window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
                 const p = document.createElement("p");
                 p.innerHTML = "Get rickrolled!";
