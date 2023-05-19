@@ -43,7 +43,7 @@ function createBanner() {
 function showWhoami() {
     const p = document.createElement("p");
     p.innerHTML = `
-        Hey, the owner of this site go by name Klyde/Ely, 
+        Hey, the owner of this site go by Klyde/Ely, 
         a passionate individual with a deep love for creating interesting web 
         applications, and exploring the exciting realm of cybersecurity. 
         Recognizing the importance of protecting digital systems from malicious actors, Ely delved into the depths of 
