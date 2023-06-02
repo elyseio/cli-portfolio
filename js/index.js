@@ -11,7 +11,7 @@ const helpsCommand = [
     },
     {
         command: "'tech-stacks'",
-        description: "- show tech stacks I've worked with"
+        description: "- tech stacks I've worked with"
     },
     {
         command: "'projects'",
@@ -157,7 +157,7 @@ function showSecret() {
                 div.appendChild(p);
             } else {
                 const p = document.createElement("p");
-                p.innerHTML = "Invalid password";
+                p.innerHTML = "Invalid password!";
                 div.appendChild(p);
             }
             createCLI();
