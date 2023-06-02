@@ -26,7 +26,7 @@ function createBanner() {
                         <img src="./img/evil-morty.png" alt="Evil Morty">
                     </div>
                     <div class="p-container">
-                        <p class="retro">
+                        <p class="crt retro">
                             Wel<span class="glitch" data-text="come">come</span>...welcome! 
                             You've found the portfolio o..of <span class="glitch" data-text="elyseio">elyseio</span>... 
                             Anyway, this is an interactive web terminal.

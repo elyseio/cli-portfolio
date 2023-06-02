@@ -1,3 +1,7 @@
+/***********************************************************
+                        GLOBAL STYLES
+************************************************************/
+
 :root {
     --bg-color: #131313;
     --primary-txt-color: #5ce65c;
@@ -19,28 +23,6 @@ body {
     color: var(--white-txt-color);
 }
 
-.container {
-    width: 90%;
-    max-width: 80em;
-    margin-inline: auto;
-    font-size: 1.2rem;
-}
-
-.crt,
-input,
-.p-container {
-  animation: textShadow 1.6s infinite;
-}
-
-.retro {
-    text-shadow: 0 0 1em #3F3;
-}
-
-
-.flex {
-    display: flex;
-}
-
 main {
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -48,25 +30,6 @@ main {
 
 img {
     width: 10em;
-}
-
-.img-container {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.banner {
-    margin-top: 1em;
-    color: var(--primary-txt-color);
-    text-shadow: 0 0 5px var(--primary-txt-color);
-}
-
-.p-container {
-    margin-bottom: 1em;
-}
-
-.cli {
-    margin-top: .5em;
 }
 
 input {
@@ -81,9 +44,80 @@ input:focus {
     outline: none;
 }
 
+
+
+/***********************************************************
+                        CLASSES
+************************************************************/
+
+.container {
+    width: 90%;
+    max-width: 80em;
+    margin-inline: auto;
+    font-size: 1.2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.crt {
+  animation: textShadow 1.6s infinite;
+}
+
+/* Background blur effect on text */
+/*
+.retro {
+    text-shadow: 0 0 1em var(--primary-txt-color);
+}
+*/
+
+.img-container {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.banner {
+    margin-top: 1em;
+    color: var(--primary-txt-color);
+}
+
+.p-container {
+    margin-bottom: 1em;
+}
+
+.cli {
+    margin-top: .5em;
+}
+
 .projects p a {
     color: red;
 }
+
+
+
+/***********************************************************
+                        MEDIA QUERIES
+************************************************************/
+
+@media only screen and (min-width: 768px) {
+    .container {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .container {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+}
+
+
+
+/***********************************************************
+                        ANIMATIONS
+************************************************************/
 
 @keyframes textShadow {
   0% {
@@ -151,15 +185,3 @@ input:focus {
   }
 }
 
-@media only screen and (min-width: 768px) {
-    .container {
-        font-size: 1.4rem;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .container {
-        padding-left: 3em;
-        padding-right: 3em;
-    }
-}
