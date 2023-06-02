@@ -1,14 +1,38 @@
 const root = document.getElementById("root");
 
-const help = [
-    "'whoami'         - who made this",
-    "'whoareyou'      - yes, who are you?",
-    "'tech-stacks'    - show tech stacks I've worked with",
-    "'projects'       - view projects",
-    "'clear'          - clear the terminal screen",
-    "'banner'         - show banner",
-    "'secret'         - I wonder what it does?",
-    "'help'           - show list of valid commands"
+const helpsCommand = [
+    {
+        command: "whoami",
+        description: "who made this"
+    },
+    {
+        command: "whoareyou",
+        description: "yes, who are you?"
+    },
+    {
+        command: "tech-stacks",
+        description: "show tech stacks I've worked with"
+    },
+    {
+        command: "projects",
+        description: "view projects"
+    },
+    {
+        command: "clear",
+        description: "clear the terminal screen"
+    },
+    {
+        command: "banner",
+        description: "show banner"
+    },
+    {
+        command: "secret",
+        description: "Easter Egg! I wonder what this does?"
+    },
+    {
+        command: "help",
+        description: "show list of valid commands"
+    }
 ];
 
 const projects = [ 
@@ -18,6 +42,10 @@ const projects = [
     },
 ];
 
+function setRetroClass(el) {
+    el.setAttribute("class", "retro");
+}
+
 function createBanner() {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -26,9 +54,9 @@ function createBanner() {
                         <img src="./img/evil-morty.png" alt="Evil Morty">
                     </div>
                     <div class="p-container">
-                        <p class="crt retro">
-                            Wel<span class="glitch" data-text="come">come</span>...welcome! 
-                            You've found the portfolio o..of <span class="glitch" data-text="elyseio">elyseio</span>... 
+                        <p class="p-text crt">
+                            Wel<span class="glitch" title="come">come</span>...welcome! 
+                            You've found the portfolio o..of <span class="glitch" title="elyseio">elyseio</span>... 
                             Anyway, this is an interactive web terminal.
                             <br>
                             Type <span class="help">'help'</span> to see list of
@@ -42,6 +70,7 @@ function createBanner() {
 
 function showWhoami() {
     const p = document.createElement("p");
+    setRetroClass(p);
     p.innerHTML = `
         Hey, the owner of this site go by Klyde/Ely, 
         a passionate individual with a deep love for creating interesting web 
@@ -59,6 +88,7 @@ function showWhoami() {
 
 function showTechStacks() {
     const p = document.createElement("p");
+    setRetroClass(p);
     p.innerHTML = "Figma, HTML/CSS, SASS, JavaScript, Git, React, Node.js, Express.js, PostgreSQL";
     root.appendChild(p);
     createCLI();
@@ -66,6 +96,7 @@ function showTechStacks() {
 
 function showWhoareyou() {
     const p = document.createElement("p");
+    setRetroClass(p);
     p.innerHTML = "Do you intimately know yourself?";
     root.appendChild(p);
     createCLI();
@@ -79,6 +110,7 @@ function showProjects() {
         const p = document.createElement("p");
         const a = document.createElement("a");
         const txt = document.createTextNode(el.name);
+        setRetroClass(a);
         a.appendChild(txt);
         a.href = el.url;
         a.target = "_blank";
@@ -138,9 +170,18 @@ function showSecret() {
 
 function showHelp() {
     const div = document.createElement("div");
-    help.map((el) => {
+    helpsCommand.map((help) => {
         const p = document.createElement("p");
-        p.innerHTML = el
+        p.setAttribute("class", "p-help");
+
+        const spanCommand = document.createElement("span");
+        spanCommand.setAttribute("class", "command");
+        spanCommand.innerHTML = help.command;
+
+        const spanDescription = document.createElement("span");
+        spanDescription.innerHTML = help.description;
+
+        p.append(spanCommand, spanDescription);
         div.appendChild(p);
     });
     root.appendChild(div);
