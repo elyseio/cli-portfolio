@@ -1,6 +1,6 @@
 :root {
     --bg-color: #131313;
-    --primary-txt-color: #1A8A09;
+    --primary-txt-color: #5ce65c;
     --white-txt-color: #fff;
 }
 
@@ -27,8 +27,13 @@ body {
 }
 
 .crt,
-input {
+input,
+.p-container {
   animation: textShadow 1.6s infinite;
+}
+
+.retro {
+    text-shadow: 0 0 1em #3F3;
 }
 
 
