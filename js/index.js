@@ -2,36 +2,36 @@ const root = document.getElementById("root");
 
 const helpsCommand = [
     {
-        command: "whoami",
-        description: "who made this"
+        command: "'whoami'",
+        description: "- who made this"
     },
     {
-        command: "whoareyou",
-        description: "yes, who are you?"
+        command: "'whoareyou'",
+        description: "- yes, who are you?"
     },
     {
-        command: "tech-stacks",
-        description: "show tech stacks I've worked with"
+        command: "'tech-stacks'",
+        description: "- show tech stacks I've worked with"
     },
     {
-        command: "projects",
-        description: "view projects"
+        command: "'projects'",
+        description: "- view projects"
     },
     {
-        command: "clear",
-        description: "clear the terminal screen"
+        command: "'clear'",
+        description: "- clear the terminal screen"
     },
     {
-        command: "banner",
-        description: "show banner"
+        command: "'banner'",
+        description: "- show banner"
     },
     {
-        command: "secret",
-        description: "Easter Egg! I wonder what this does?"
+        command: "'secret'",
+        description: "- I wonder what this does?"
     },
     {
-        command: "help",
-        description: "show list of valid commands"
+        command: "'help'",
+        description: "- show list of valid commands"
     }
 ];
 
@@ -178,10 +178,11 @@ function showHelp() {
         spanCommand.setAttribute("class", "command");
         spanCommand.innerHTML = help.command;
 
-        const spanDescription = document.createElement("span");
-        spanDescription.innerHTML = help.description;
+        const pDescription = document.createElement("p");
+        pDescription.innerHTML = help.description;
+        pDescription.setAttribute("class", "description");
 
-        p.append(spanCommand, spanDescription);
+        p.append(spanCommand, pDescription);
         div.appendChild(p);
     });
     root.appendChild(div);

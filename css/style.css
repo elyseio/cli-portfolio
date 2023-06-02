@@ -94,9 +94,12 @@ input:focus {
 
 .p-help .command {
     color: var(--primary-txt-color);
-    margin-right: 5em;
 }
 
+.p-help .description {
+    margin-top: -1.63em;
+    padding-left: 5.5em;
+}
 
 
 /***********************************************************
