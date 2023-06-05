@@ -10,8 +10,8 @@ const helpsCommand = [
         description: "- yes, who are you?"
     },
     {
-        command: "'tech-stacks'",
-        description: "- tech stacks I've worked with"
+        command: "'tstacks'",
+        description: "- technology stacks I've worked with"
     },
     {
         command: "'projects'",
@@ -89,7 +89,7 @@ function showWhoami() {
 function showTechStacks() {
     const p = document.createElement("p");
     setRetroClass(p);
-    p.innerHTML = "Figma, HTML/CSS, SASS, JavaScript, Git, React, Node.js, Express.js, PostgreSQL";
+    p.innerHTML = "Figma, Git, HTML/CSS, SASS, JavaScript, React, Node.js, Express.js, PostgreSQL";
     root.appendChild(p);
     createCLI();
 }
