@@ -1,9 +1,9 @@
 const root = document.getElementById("root");
 
-const helpsCommand = [
+const helpCommands = [
     {
         command: "'whoami'",
-        description: "- who made this"
+        description: "- who made this site"
     },
     {
         command: "'whoareyou'",
@@ -170,7 +170,7 @@ function showSecret() {
 
 function showHelp() {
     const div = document.createElement("div");
-    helpsCommand.map((help) => {
+    helpCommands.map((help) => {
         const p = document.createElement("p");
         p.setAttribute("class", "p-help");
 
@@ -215,7 +215,7 @@ function userInput(input, div) {
                 case "whoareyou":
                     showWhoareyou();
                     break;
-                case "tech-stacks":
+                case "tstacks":
                     showTechStacks();
                     break;
                 case "projects":
