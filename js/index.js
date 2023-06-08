@@ -46,6 +46,23 @@ function setRetroClass(el) {
     el.setAttribute("class", "retro");
 }
 
+function loadP() {
+    const img = document.querySelector('img');
+    function loaded() {
+        const pContainer = document.getElementById('p-container');
+        if(pContainer.classList.contains('hide')) {
+            pContainer.classList.remove('hide');
+        }
+        createCLI();
+        pContainer.removeAttribute('id');
+    }
+    if(img.complete) {
+        loaded();
+    } else {
+        img.addEventListener('load', loaded);
+    }
+}
+
 function createBanner() {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -53,7 +70,7 @@ function createBanner() {
                     <div class="img-container">
                         <img src="./img/evil-morty.png" alt="Evil Morty">
                     </div>
-                    <div class="p-container">
+                    <div class="p-container hide" id="p-container">
                         <p class="p-text crt">
                             Wel<span class="glitch" title="come">come</span>...welcome! 
                             You've found the portfolio o..of <span class="glitch" title="elyseio">elyseio</span>... 
@@ -66,6 +83,7 @@ function createBanner() {
                 </div>
     `;
     root.appendChild(div);
+    loadP();
 }
 
 function showWhoami() {
@@ -73,7 +91,7 @@ function showWhoami() {
     setRetroClass(p);
     p.innerHTML = `
         Hey, the owner of this site go by Klyde/Ely, 
-        a passionate individual with a deep love for creating interesting web 
+        a passionate individual with a deep love for creating compelling web 
         applications, and exploring the exciting realm of cybersecurity. 
         Recognizing the importance of protecting digital systems from malicious actors, Ely delved into the depths of 
         ethical hacking and vulnerability testing. 
@@ -130,7 +148,6 @@ function clear() {
 
 function showBanner() {
     createBanner();
-    createCLI();
 }
 
 function showSecret() {
@@ -260,7 +277,6 @@ function createCLI() {
 
 function main() {
     createBanner();
-    createCLI();
 }
 
 main();
