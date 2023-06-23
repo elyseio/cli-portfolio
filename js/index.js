@@ -76,7 +76,7 @@ function createBanner() {
                             You've found the portfolio o..of <span class="glitch" title="elyseio">elyseio</span>... 
                             Anyway, this is an interactive web terminal.
                             <br>
-                            Type <span class="help">'help'</span> to see list of
+                            Type <span class="help">'help'</span> after the '$' to see list of
                             available commands.
                         </p>
                     </div>
