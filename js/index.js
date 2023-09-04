@@ -266,7 +266,7 @@ function createCLI() {
     newInput.setAttribute("type", "text");
     newInput.setAttribute("id", "input");
     span.classList.add("whois");
-    span.innerHTML = "[intruder@term ~] $ ";
+    span.textContent = "[intruder@term ~] $ ";
     div.appendChild(span);
     div.appendChild(newInput);
     root.appendChild(div);
