@@ -89,7 +89,7 @@ function createBanner() {
 function showWhoami() {
     const p = document.createElement("p");
     setRetroClass(p);
-    p.innerHTML = `
+    p.textContent = `
         Hey, the owner of this site go by Klyde/Ely, 
         a passionate individual with a deep love for creating compelling web 
         applications, and exploring the exciting realm of cybersecurity. 
@@ -107,7 +107,7 @@ function showWhoami() {
 function showTechStacks() {
     const p = document.createElement("p");
     setRetroClass(p);
-    p.innerHTML = "Figma, Git, HTML/CSS, SASS, JavaScript, React, Node.js, Express.js, PostgreSQL";
+    p.textContent = "Figma, Git, HTML/CSS, SASS, JavaScript, React, Node.js, Express.js, PostgreSQL";
     root.appendChild(p);
     createCLI();
 }
@@ -115,7 +115,7 @@ function showTechStacks() {
 function showWhoareyou() {
     const p = document.createElement("p");
     setRetroClass(p);
-    p.innerHTML = "Do you intimately know yourself?";
+    p.textContent = "Do you intimately know yourself?";
     root.appendChild(p);
     createCLI();
 }
@@ -157,7 +157,7 @@ function showSecret() {
     input.setAttribute("type", "password");
     input.setAttribute("id", "password");
     const span = document.createElement("span");
-    span.innerHTML = "password: ";
+    span.textContent = "password: ";
     div.appendChild(span);
     div.appendChild(input);
     root.appendChild(div);
@@ -170,11 +170,11 @@ function showSecret() {
                 console.log("Gottem!");
                 window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
                 const p = document.createElement("p");
-                p.innerHTML = "Get rickrolled!";
+                p.textContent = "Get rickrolled!";
                 div.appendChild(p);
             } else {
                 const p = document.createElement("p");
-                p.innerHTML = "Invalid password!";
+                p.textContent = "Invalid password!";
                 div.appendChild(p);
             }
             createCLI();
@@ -193,10 +193,10 @@ function showHelp() {
 
         const spanCommand = document.createElement("span");
         spanCommand.setAttribute("class", "command");
-        spanCommand.innerHTML = help.command;
+        spanCommand.textContent = help.command;
 
         const pDescription = document.createElement("p");
-        pDescription.innerHTML = help.description;
+        pDescription.textContent = help.description;
         pDescription.setAttribute("class", "description");
 
         p.append(spanCommand, pDescription);
@@ -208,7 +208,7 @@ function showHelp() {
 
 function error() {
     const notFound = document.createElement("p");
-    notFound.innerHTML = "Command not found. Type 'help' for the list of commands.";
+    notFound.textContent = "Command not found. Type 'help' for the list of commands.";
     root.appendChild(notFound);
     createCLI();
 }
@@ -222,7 +222,7 @@ function userInput(input, div) {
                 return;
             }
             const span = document.createElement("span");
-            span.innerHTML = userInput;
+            span.textContent = userInput;
             div.appendChild(span);
             input.remove();
             switch(userInput) {
