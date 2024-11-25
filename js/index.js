@@ -40,6 +40,10 @@ const projects = [
         name: "'BOXCHAMPY'    - landing page for a fighting gym, made with pure HTML/CSS",
         url: "https://boxchampy.netlify.app"
     },
+    {
+      name: "'Github Repo' - github repo of projects",
+      url: "https://github.com/elyseio"
+    },
 ];
 
 function setRetroClass(el) {
