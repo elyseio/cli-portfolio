@@ -94,15 +94,7 @@ function showWhoami() {
     const p = document.createElement("p");
     setRetroClass(p);
     p.textContent = `
-        Hey, the owner of this site go by Klyde/Ely, 
-        a passionate individual with a deep love for creating compelling web 
-        applications, and exploring the exciting realm of cybersecurity. 
-        Recognizing the importance of protecting digital systems from malicious actors, Ely delved into the depths of 
-        ethical hacking and vulnerability testing. 
-
-        With a diverse skill set encompassing web development, cybersecurity, and bug bounty hacking, 
-        a unique combination of creative thinking, technical expertise, and a hacker's mindset sets him apart in the digital 
-        landscape.
+      Oh geez, hey there! So, uh, let me introduce you to Klyde—uh, or Ely, whichever you wanna call him. Uh, he builds these super cool web apps, and he knows a ton about cybersecurity—like, he ethically hacks into stuff to make sure it’s all safe, okay? Oh! And he’s, like, a crazy good data analyst too! He can, uh, break down complex info and find, like, patterns and insights that most people would miss. It’s, uh, kinda mind-blowing, honestly! ”
     `;
     root.appendChild(p);
     createCLI();
