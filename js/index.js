@@ -94,7 +94,7 @@ function showWhoami() {
     const p = document.createElement("p");
     setRetroClass(p);
     p.textContent = `
-      Oh geez, hey there! So, uh, let me introduce you to Klyde—uh, or Ely, whichever you wanna call him. Uh, he builds these super cool web apps, and he knows a ton about cybersecurity—like, he ethically hacks into stuff to make sure it’s all safe, okay? Oh! And he’s, like, a crazy good data analyst too! He can, uh, break down complex info and find, like, patterns and insights that most people would miss. It’s, uh, kinda mind-blowing, honestly! ”
+      “Oh geez, hey there! So, uh, let me introduce you to Klyde—uh, or Ely, whichever you wanna call him. Uh, he builds these super cool web apps, and he knows a ton about cybersecurity—like, he ethically hacks into stuff to make sure it’s all safe, okay? Oh! And he’s, like, a crazy good data analyst too! He can, uh, break down complex info and find, like, patterns and insights that most people would miss. It’s, uh, kinda mind-blowing, honestly!”
     `;
     root.appendChild(p);
     createCLI();
