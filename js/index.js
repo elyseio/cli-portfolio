@@ -162,6 +162,7 @@ function showSecret() {
         if(event.key === "Enter" || event.keyCode === 13) {
             input.setAttribute("disabled", "true");
             input.removeAttribute("id");
+            // oopsy
             if(event.target.value === "thepasswordisthis") {
                 console.log("Gottem!");
                 window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
