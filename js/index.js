@@ -76,8 +76,8 @@ function createBanner() {
                     </div>
                     <div class="p-container hide" id="p-container">
                         <p class="p-text crt">
-                            Wel<span class="glitch" title="come">come</span>...welcome! 
-                            You've found the portfolio o..of <span class="glitch" title="elyseio">elyseio</span>... 
+                            Welcome...welcome! 
+                            You've found the portfolio o..of elyseio... 
                             Anyway, this is an interactive web terminal.
                             <br>
                             Type <span class="help">'help'</span> after the '$' to see list of
