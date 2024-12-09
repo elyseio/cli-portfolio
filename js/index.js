@@ -80,7 +80,7 @@ function createBanner() {
                             You've found the portfolio o..of elyseio... 
                             Anyway, this is an interactive web terminal.
                             <br>
-                            Type <span class="help">'help'</span> after the '$' to see list of
+                            Type <span class="help">'help'</span> or <span class="help">'?'</span> after the '$' to see list of
                             available commands.
                         </p>
                     </div>
@@ -205,7 +205,7 @@ function showHelp() {
 
 function error() {
     const notFound = document.createElement("p");
-    notFound.textContent = "Command not found. Type 'help' for the list of commands.";
+    notFound.textContent = "Command not found. Type 'help' or '?' for the list of commands.";
     root.appendChild(notFound);
     createCLI();
 }
@@ -242,6 +242,7 @@ function userInput(input, div) {
                     showSecret();
                     break;
                 case "help":
+                case"?":
                     showHelp();
                     break;
                 default:
