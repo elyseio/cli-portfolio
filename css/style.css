@@ -3,7 +3,7 @@
 ************************************************************/
 
 :root {
-    --bg-color: #131313;
+    --bg-color: rgb(16, 17, 22);
     --primary-txt-color: #5ce65c;
     --white-txt-color: #fff;
 }
